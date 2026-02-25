@@ -122,7 +122,7 @@ PROVISIONING
   │  - New-ADServiceAccount -Name 'gmsa-{appname}' -DNSHostName ...
   │  - PrincipalsAllowedToRetrieveManagedPassword = member servers group
   │  - Set SPNs if required (e.g., HTTP, MSSQLSvc)
-  │  - Install-ADServiceAccount via Ansible on member servers
+  │  - Install-ADServiceAccount via Chef on member servers
   ▼
 ACTIVE
   │  AD auto-rotates password every 30 days
@@ -133,7 +133,7 @@ UNDER_REVIEW (annual)
   ▼
 DECOMMISSIONED
   │  Remove-ADServiceAccount
-  │  Uninstall from member servers via Ansible
+  │  Uninstall from member servers via Chef
 ```
 
 **Naming convention:** `gmsa-{appname}-{env}` (e.g., `gmsa-sqlreport-prod`)
@@ -292,7 +292,7 @@ REQUEST (Jira)
 PENDING_APPROVAL
   ▼
 PROVISIONING
-  │  Terraform: null_resource + Ansible playbook OR direct SSH provider
+  │  Terraform: null_resource + Chef recipe OR direct SSH provider
   │  - useradd -r -s /sbin/nologin -d /opt/{appname} svc_{appname}
   │  - Set uid in reserved range (200-499 for service accounts)
   │  - SSH key pair generated; private key stored in Delinea
@@ -307,7 +307,7 @@ UNDER_REVIEW (annual)
   │  Confirm account still exists on servers, process still running
   ▼
 DECOMMISSIONED
-  │  userdel -r svc_{appname} via Ansible
+  │  userdel -r svc_{appname} via Chef
   │  Remove sudoers entry
   │  Delinea: delete SSH key secret
 ```

@@ -135,7 +135,7 @@ Service Accounts
 
 ### Phase 1 — Foundation (Months 1–2)
 - [ ] GitLab repository structure and branching strategy
-- [ ] Terraform provider setup (AD, Entra, AWS, Linux via Ansible/SSH)
+- [ ] Terraform provider setup (AD, Entra, AWS, Linux via Chef/SSH)
 - [ ] Jira project creation (issue types, workflows, fields)
 - [ ] Jira ↔ GitLab webhook integration
 - [ ] Delinea integration for AD account password management
@@ -149,7 +149,7 @@ Service Accounts
 - [ ] Pilot: 5 cloud service accounts
 
 ### Phase 3 — OS & Application Accounts (Months 5–6)
-- [ ] Linux system account lifecycle via Ansible + Terraform
+- [ ] Linux system account lifecycle via Chef + Terraform
 - [ ] Database account lifecycle (SQL Server, PostgreSQL)
 - [ ] API key / token lifecycle
 - [ ] Delinea integration expansion to DB accounts

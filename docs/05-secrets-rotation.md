@@ -446,7 +446,7 @@ spec:
 
 ### Pattern D: CI/CD Pipeline Injection (GitLab)
 
-For infrastructure scripts (Terraform/Ansible) or deployment scripts requiring external API keys.
+For infrastructure scripts (Terraform/Chef) or deployment scripts requiring external API keys.
 
 ```yaml
 # .gitlab-ci.yml — using Delinea DSV CLI in the runner
