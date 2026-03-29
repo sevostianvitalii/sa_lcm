@@ -1,0 +1,3 @@
+# accounts/api-keys/.gitkeep
+# API Key / OAuth Client / Service Token declarations will go here.
+# Examples: apikey-monitoring-datadog-prod.tf, token-slack-webhook-prod.tf

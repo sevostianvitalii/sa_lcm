@@ -1,0 +1,3 @@
+# accounts/linux/.gitkeep
+# Linux system account declarations will go here.
+# Examples: svc-monitoring-prod.tf, svc-backup-prod.tf
