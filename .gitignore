@@ -1,3 +1,17 @@
 # Ignore local agent configuration and context
 .agent/
 .agent
+
+# Intermediate/temp files (drift reports, provision logs)
+.tmp/
+
+# Terraform state and local files
+*.tfstate
+*.tfstate.backup
+.terraform/
+.terraform.lock.hcl
+
+# Secrets — never commit
+.env
+credentials.json
+token.json

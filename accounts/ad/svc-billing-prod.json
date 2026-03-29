@@ -1,0 +1,18 @@
+{
+  "name": "billing",
+  "environment": "prod",
+  "type": "ad-service-account",
+  "description": "Billing service Windows host account for scheduled task execution",
+  "ou_path": "OU=ServiceAccounts,OU=Prod,DC=bank,DC=local",
+  "groups": [
+    "CN=GRP_Billing_Service,OU=Groups,DC=bank,DC=local",
+    "CN=GRP_FileShare_Billing_RW,OU=Groups,DC=bank,DC=local"
+  ],
+  "jira_ticket": "SACM-142",
+  "technical_owner": "john.smith@bank.com",
+  "business_owner": "jane.doe@bank.com",
+  "delinea_folder_id": "1042",
+  "privilege_level": "standard",
+  "created_date": "2026-04-01",
+  "status": "active"
+}

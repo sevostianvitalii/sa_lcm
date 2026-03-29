@@ -1,0 +1,20 @@
+{
+  "name": "sqlreport",
+  "environment": "prod",
+  "type": "gmsa",
+  "description": "SQL Server Reporting Services gMSA for SSRS execution",
+  "member_servers": [
+    "SQLSERVER01",
+    "SQLSERVER02"
+  ],
+  "spns": [
+    "MSSQLSvc/sqlserver01.bank.local:1433",
+    "MSSQLSvc/sqlserver02.bank.local:1433"
+  ],
+  "jira_ticket": "SACM-155",
+  "technical_owner": "dba.team@bank.com",
+  "business_owner": "finance.director@bank.com",
+  "privilege_level": "elevated",
+  "created_date": "2026-04-01",
+  "status": "active"
+}

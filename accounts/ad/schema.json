@@ -1,0 +1,71 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "AD Service Account Declaration",
+  "description": "SACM v2 — Declarative definition for an on-prem Active Directory service account. Used by PowerShell provisioning scripts and drift detection.",
+  "type": "object",
+  "required": ["name", "environment", "type", "ou_path", "jira_ticket", "technical_owner", "status"],
+  "properties": {
+    "name": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9-]{2,20}$",
+      "description": "Application short name without prefix. Combined with environment to form svc-{name}-{env}."
+    },
+    "environment": {
+      "type": "string",
+      "enum": ["prod", "staging", "dev"],
+      "description": "Target environment."
+    },
+    "type": {
+      "type": "string",
+      "const": "ad-service-account",
+      "description": "Account type identifier. Must be 'ad-service-account' for this schema."
+    },
+    "description": {
+      "type": "string",
+      "description": "Purpose of the account."
+    },
+    "ou_path": {
+      "type": "string",
+      "pattern": "^OU=.+",
+      "description": "Full distinguished name of the target OU in AD."
+    },
+    "groups": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "List of AD group distinguished names this account should be a member of."
+    },
+    "jira_ticket": {
+      "type": "string",
+      "pattern": "^[A-Z]+-\\d+$",
+      "description": "SACM Jira ticket reference (e.g., SACM-142)."
+    },
+    "technical_owner": {
+      "type": "string",
+      "description": "Email of the technical owner responsible for the account."
+    },
+    "business_owner": {
+      "type": "string",
+      "description": "Email of the business owner accountable for the account."
+    },
+    "delinea_folder_id": {
+      "type": "string",
+      "description": "Delinea Secret Server folder ID for credential storage."
+    },
+    "privilege_level": {
+      "type": "string",
+      "enum": ["standard", "elevated", "privileged"],
+      "description": "Privilege classification per SACM policy."
+    },
+    "created_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date the account was created (ISO 8601)."
+    },
+    "status": {
+      "type": "string",
+      "enum": ["active", "decommissioned", "suspended"],
+      "description": "Current lifecycle status."
+    }
+  },
+  "additionalProperties": false
+}
